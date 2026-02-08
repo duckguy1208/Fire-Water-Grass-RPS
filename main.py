@@ -29,9 +29,11 @@ while win==False:
     elif (user_input == "water" and opponent_choice == "grass"):
         user_win = False
         win = True
-    else: #(user_input == "grass" and opponent_choice == "fire"):
+    elif (user_input == "grass" and opponent_choice == "fire"):
         user_win = False
         win = True
+    else:
+        print("Invalid input. Please enter Fire, Water, or Grass.")
     
         
     
@@ -48,4 +50,3 @@ if rerun == "yes":
     win = False
 else:
     print("Thanks for playing! Goodbye.")
-
