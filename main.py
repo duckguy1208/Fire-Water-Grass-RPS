@@ -2,7 +2,7 @@ import random
 win = False
 user_win = False
 
-print("Welcome to the Fire, Water, Grass game!")
+print("Welcome to the Fire, Water, Grass game!\nRules:\n- Fire beats Grass\n- Water beats Fire\n- Grass beats Water\nLet's play!\n")
 
 while win==False:
     user_input = input("Enter your choice (Fire, Water, Grass): ").strip().lower()
