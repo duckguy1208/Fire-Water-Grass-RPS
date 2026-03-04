@@ -60,9 +60,9 @@ while play_again:
         print("You lose! "+opponent_choice+" beats "+user_input+".")
     
     rerun=input("Do you want to play again? (yes/no): ").strip().lower()
-    if rerun == "yes":
+    if rerun == "yes" or rerun == "y":
         play_again = True
-    elif rerun == "no":
+    elif rerun == "no" or rerun == "n":
         play_again = False
         print("Thanks for playing! Goodbye.")
         print("Your final score: "+str(win_counter)+" wins, "+str(lose_counter)+" losses, and "+str(tie_counter)+" ties.")
