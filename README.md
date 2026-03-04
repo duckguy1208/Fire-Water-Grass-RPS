@@ -1,2 +1,2 @@
 # Fire-Water-Grass-RPS-
-My personal Rock Paper Scissors game
+simple terminal based rock paper scissors style game
