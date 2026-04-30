@@ -27,17 +27,20 @@ st.title("Welcome to Fire, Water, Grass\nRules:\n- Fire beats Grass\n- Water bea
 st.write("Select your choice (Fire, Water, Grass) ")
 
 if not st.session_state.win:
-    if st.button("Fire"):
+    if st.button("Fire", disabled=st.session_state.button_disabled):
         st.session_state.result = win_condition("fire", st.session_state.opponent_choice)
-        disable_button()
+        if st.session_state.result != "tie":
+            disable_button()
         
-    if st.button("Water"):
+    if st.button("Water", disabled=st.session_state.button_disabled):
         st.session_state.result = win_condition("water", st.session_state.opponent_choice)
-        disable_button()
+        if st.session_state.result != "tie":
+            disable_button()
 
-    if st.button("Grass"):
+    if st.button("Grass", disabled=st.session_state.button_disabled):
         st.session_state.result = win_condition("grass", st.session_state.opponent_choice)
-        disable_button()
+        if st.session_state.result != "tie":
+            disable_button()
 
 
 if st.session_state.result == "win":
@@ -55,4 +58,5 @@ if st.button("Play Again"):
     st.session_state.win = False
     st.session_state.opponent_choice = random.choice(choices)
     st.session_state.result = None
+    st.session_state.button_disabled = False
     st.rerun()
