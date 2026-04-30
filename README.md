@@ -1,4 +1,5 @@
 # Fire-Water-Grass-RPS-
+<<<<<<< HEAD
 My personal Rock Paper Scissors game
 
 """
@@ -48,3 +49,6 @@ if rerun == "yes":
 else:
     print("Thanks for playing! Goodbye.")
 """
+=======
+simple terminal based rock paper scissors style game
+>>>>>>> 58b36b90848720a0967199e99cadc93604771c69
