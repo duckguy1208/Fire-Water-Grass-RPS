@@ -22,9 +22,9 @@ def win_condition(user_input, opponent_choice):
     else:
         return "lose"
 
-st.title("Welcome to Fire, Water, Grass\nRules:\n- Fire beats Grass\n- Water beats Fire\n- Grass beats Water")
+st.title("Welcome to Fire, Water, Grass\n- Fire beats Grass\n- Water beats Fire\n- Grass beats Water")
 
-st.write("Select your choice (Fire, Water, Grass) ")
+st.write("Select your choice (Fire Water Grass) ")
 
 if not st.session_state.win:
     if st.button("Fire", disabled=st.session_state.button_disabled):
