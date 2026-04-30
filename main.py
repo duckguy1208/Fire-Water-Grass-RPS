@@ -6,14 +6,8 @@ if 'win' not in st.session_state:
     st.session_state.opponent_choice = random.choice(["fire", "water", "grass"])
     st.session_state.result = None
 
-if "button_disabled" not in st.session_state:
-    st.session_state.button_disabled = False
-
 choices = ["fire", "water", "grass"]
 
-def disable_button():
-    st.session_state.button_disabled = True
-   
 def win_condition(user_input, opponent_choice):
     if user_input == opponent_choice:
         return "tie"
@@ -26,29 +20,33 @@ st.title("Welcome to Fire, Water, Grass\n- Fire beats Grass\n- Water beats Fire\
 
 st.write("Select your choice (Fire Water Grass) ")
 
-if not st.session_state.win:
-    if st.button("Fire", disabled=st.session_state.button_disabled):
-        st.session_state.result = win_condition("fire", st.session_state.opponent_choice)
-        if st.session_state.result != "tie":
-            disable_button()
-        
-    if st.button("Water", disabled=st.session_state.button_disabled):
-        st.session_state.result = win_condition("water", st.session_state.opponent_choice)
-        if st.session_state.result != "tie":
-            disable_button()
+# Disable buttons if game is already played
+game_played = st.session_state.get('win', False)
 
-    if st.button("Grass", disabled=st.session_state.button_disabled):
-        st.session_state.result = win_condition("grass", st.session_state.opponent_choice)
-        if st.session_state.result != "tie":
-            disable_button()
+if st.button("Fire", disabled=game_played):
+    st.session_state.result = win_condition("fire", st.session_state.opponent_choice)
+    st.session_state.win = True
+    st.rerun()
+    
+if st.button("Water", disabled=game_played):
+    st.session_state.result = win_condition("water", st.session_state.opponent_choice)
+    st.session_state.win = True
+    st.rerun()
+
+if st.button("Grass", disabled=game_played):
+    st.session_state.result = win_condition("grass", st.session_state.opponent_choice)
+    st.session_state.win = True
+    st.rerun()
 
 
 if st.session_state.result == "win":
     st.write("You win! ")
     st.write("Congratulations! Thanks for playing!")
+
 elif st.session_state.result == "lose":
     st.write("You lose! ")
     st.write("Thanks for playing! Try again to beat the opponent.")
+
 elif st.session_state.result == "tie":
     st.write("It's a tie! Try again.")
 
@@ -58,5 +56,4 @@ if st.button("Play Again"):
     st.session_state.win = False
     st.session_state.opponent_choice = random.choice(choices)
     st.session_state.result = None
-    st.session_state.button_disabled = False
     st.rerun()
