@@ -25,17 +25,8 @@ The rules are simple but the stakes are high:
 ### Prerequisites
 To run this project locally, you just need a modern web browser (or the appropriate runtime if you are using Node.js/Python).
 
-### Installation & Usage
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/duckguy1208/Fire-Water-Grass-RPS.git](https://github.com/duckguy1208/Fire-Water-Grass-RPS.git)
-    ```
-2.  **Navigate to the project folder:**
-    ```bash
-    cd Fire-Water-Grass-RPS
-    ```
-3.  **Launch the game:**
-    https://fire-water-grass.streamlit.app/
+### Link
+https://fire-water-grass.streamlit.app/
 
 ---
 
