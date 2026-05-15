@@ -36,6 +36,11 @@ https://fire-water-grass.streamlit.app/
 
 ---
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
 ##  Author
 **duckguy1208**
 * GitHub: [@duckguy1208](https://github.com/duckguy1208)
